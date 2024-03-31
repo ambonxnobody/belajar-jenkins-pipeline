@@ -3,7 +3,9 @@ pipeline {
 
   stages {
     stage("Hello") {
-      echo("Hello Pipeline")
+      steps {
+        echo("Hello Pipeline")
+      }
     }
   }
 }
