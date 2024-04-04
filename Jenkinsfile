@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label "debian && java17"
+        }
+    }
     
     stages {
         stage('Hello') {
