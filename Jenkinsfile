@@ -7,6 +7,8 @@ pipeline {
     //     }
     // }
 
+    // discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "Webhook URL
+
     environment {
         AUTHOR = "Hafid Dian Nurfaujan Ahat"
         EMAIL = "ambonxnobody.15072001@gmail.com"
@@ -245,7 +247,7 @@ pipeline {
           }
           steps {
             withCredentials([usernamePassword(
-                credentialsId: "eko_rahasia",
+                credentialsId: "hafid_rahasia",
                 usernameVariable: "USER",
                 passwordVariable: "PASSWORD"
             )]) {
