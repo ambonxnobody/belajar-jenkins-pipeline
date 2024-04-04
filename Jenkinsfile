@@ -33,6 +33,7 @@ pipeline {
     }
     
     stages {
+        // TODO: Stages in Stage Example (Sequential)
         // stage("Preparation") {
         //     agent {
         //         node {
@@ -55,6 +56,7 @@ pipeline {
         //     }
         // }
 
+        // TODO: Stages in Stage Example (Parallel)
         // stage("Preparation") {
         //    failFast true
 
