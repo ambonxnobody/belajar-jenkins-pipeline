@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label "debian && java17"
+            label "ubuntu && java17"
         }
     }
     
