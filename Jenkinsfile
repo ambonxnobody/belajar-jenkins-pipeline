@@ -1,12 +1,20 @@
 pipeline {
-    agent {
-        node {
-            label "ubuntu && java17"
-        }
-    }
+    agent none
+    // agent any
+    // agent {
+    //     node {
+    //         label "ubuntu && java17"
+    //     }
+    // }
     
     stages {
         stage('Build') {
+            agent {
+                node {
+                    label "ubuntu && java17"
+                }
+            }
+            
             steps {
 
                 script {
@@ -22,8 +30,13 @@ pipeline {
         }
 
         stage('Test') {
+            agent {
+                node {
+                    label "ubuntu && java17"
+                }
+            }
+            
             steps {
-
                 script {
                     def data = [
                         "firstName": "Hafid",
@@ -40,6 +53,12 @@ pipeline {
         }
 
         stage('Deploy') {
+            agent {
+                node {
+                    label "debian && java17"
+                }
+            }
+            
             steps {
                 echo 'Hello Deploy 1'
                 sleep(10)
