@@ -84,6 +84,46 @@ pipeline {
         //         }
         //     }
         // }
+
+        // TODO: Stages in Stage Example (Matrix)
+        // stage("OS Setup") {
+        //   matrix {
+        //     axes {
+        //       axis {
+        //         name "OS"
+        //         values "linux", "windows", "mac"
+        //       }
+        //       axis {
+        //         name "ARC"
+        //         values "32", "64"
+        //       }
+        //     }
+        //     excludes {
+        //       exclude {
+        //         axis {
+        //           name "OS"
+        //           values "mac"
+        //         }
+        //         axis {
+        //           name "ARC"
+        //           values "32"
+        //         }
+        //       }
+        //     }
+        //     stages {
+        //       stage("OS Setup") {
+        //         agent  {
+        //           node {
+        //             label "linux && java11"
+        //           }
+        //         }
+        //         steps {
+        //           echo("Setup ${OS} ${ARC}")
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
             
         stage("Parameter") {
           agent {
