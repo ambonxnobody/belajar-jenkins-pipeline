@@ -6,6 +6,10 @@ pipeline {
     //         label "ubuntu && java17"
     //     }
     // }
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'MINUTES')
+    }
 
     environment {
         AUTHOR = "Hafid Dian Nurfaujan Ahat"
