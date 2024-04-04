@@ -33,7 +33,7 @@ pipeline {
     }
     
     stages {
-        // stage("Parameter") {
+        // stage("Preparation") {
         //     agent {
         //         node {
         //           label "debian && java17"
@@ -48,6 +48,34 @@ pipeline {
         //         }
 
         //         stage("Prepare Maven") {
+        //             steps {
+        //                 echo("Prepare Maven")
+        //             }
+        //         }
+        //     }
+        // }
+
+        // stage("Preparation") {
+        //    failFast true
+
+        //     parallel {
+        //         stage("Prepare Java") {
+                    // agent {
+                    //     node {
+                    //       label "debian && java17"
+                    //     }
+                    // }
+        //             steps {
+        //                 echo("Prepare Java")
+        //             }
+        //         }
+
+        //         stage("Prepare Maven") {
+                    // agent {
+                    //     node {
+                    //       label "debian && java17"
+                    //     }
+                    // }
         //             steps {
         //                 echo("Prepare Maven")
         //             }
