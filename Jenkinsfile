@@ -33,6 +33,28 @@ pipeline {
     }
     
     stages {
+        // stage("Parameter") {
+        //     agent {
+        //         node {
+        //           label "debian && java17"
+        //         }
+        //     }
+
+        //     stages {
+        //         stage("Prepare Java") {
+        //             steps {
+        //                 echo("Prepare Java")
+        //             }
+        //         }
+
+        //         stage("Prepare Maven") {
+        //             steps {
+        //                 echo("Prepare Maven")
+        //             }
+        //         }
+        //     }
+        // }
+            
         stage("Parameter") {
           agent {
             node {
@@ -139,6 +161,29 @@ pipeline {
                 echo 'Hello Deploy 2'
             }
         }
+
+        stage("Release") {
+          when {
+            expression {
+              return params.DEPLOY
+            }
+          }
+          agent {
+            node {
+              label "debian && java17"
+            }
+          }
+          steps {
+            withCredentials([usernamePassword(
+                credentialsId: "eko_rahasia",
+                usernameVariable: "USER",
+                passwordVariable: "PASSWORD"
+            )]) {
+              sh('echo "Release it with -u $USER -p $PASSWORD" > "release.txt"')
+            }
+          }
+        }
+        
     }
 
     post {
