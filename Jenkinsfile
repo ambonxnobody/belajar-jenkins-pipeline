@@ -120,7 +120,7 @@ pipeline {
             input {
                 message "Can we deploy?"
                 ok "Yes, of course"
-                submitter "pzn,eko"
+                submitter "ambonxnobody"
                 parameters {
                   choice(name: "TARGET_ENV", choices: ['Development', 'Staging', 'Production'], description: "Which Environment?")
                 }
