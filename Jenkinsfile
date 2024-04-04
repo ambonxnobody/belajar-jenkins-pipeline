@@ -117,6 +117,15 @@ pipeline {
         }
 
         stage('Deploy') {
+            input {
+                message "Can we deploy?"
+                ok "Yes, of course"
+                submitter "pzn,eko"
+                parameters {
+                  choice(name: "TARGET_ENV", choices: ['Development', 'Staging', 'Production'], description: "Which Environment?")
+                }
+            }
+            
             agent {
                 node {
                     label "debian && java17"
@@ -124,6 +133,7 @@ pipeline {
             }
             
             steps {
+                echo 'Deploy to ${TARGET_ENV}'
                 echo 'Hello Deploy 1'
                 sleep(10)
                 echo 'Hello Deploy 2'
