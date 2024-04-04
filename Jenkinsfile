@@ -6,6 +6,12 @@ pipeline {
     //         label "ubuntu && java17"
     //     }
     // }
+
+    environment {
+        AUTHOR = "Hafid Dian Nurfaujan Ahat"
+        EMAIL = "ambonxnobody.15072001@gmail.com"
+        WEB = "https://ambonxnobody.vercel.app/"
+    }
     
     stages {
         stage('Prepare') {
@@ -16,6 +22,9 @@ pipeline {
             }
             
             steps {
+                echo("Author ${AUTHOR}")
+                echo("Email ${EMAIL}")
+                echo("Web ${WEB}")
                 echo("Start Job : ${env.JOB_NAME}")
                 echo("Start Build : ${env.BUILD_NUMBER}")
                 echo("Branch Name : ${env.BRANCH_NAME}")
