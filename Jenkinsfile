@@ -29,7 +29,7 @@ pipeline {
         stage("Parameter") {
           agent {
             node {
-              label "debian && java11"
+              label "debian && java17"
             }
           }
             
