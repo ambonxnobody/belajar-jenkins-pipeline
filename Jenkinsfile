@@ -15,6 +15,9 @@ pipeline {
     
     stages {
         stage('Prepare') {
+            environment {
+                APP = credentials("hafid_rahasia")
+            }
             agent {
                 node {
                     label "debian && java17"
@@ -22,9 +25,11 @@ pipeline {
             }
             
             steps {
-                echo("Author ${AUTHOR}")
-                echo("Email ${EMAIL}")
-                echo("Web ${WEB}")
+                echo("Author : ${AUTHOR}")
+                echo("App User : ${APP_USR}")
+                echo("App Password : ${APP_PSW}")
+                echo("Email : ${EMAIL}")
+                echo("Web : ${WEB}")
                 echo("Start Job : ${env.JOB_NAME}")
                 echo("Start Build : ${env.BUILD_NUMBER}")
                 echo("Branch Name : ${env.BRANCH_NAME}")
