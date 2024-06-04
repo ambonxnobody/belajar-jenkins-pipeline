@@ -116,7 +116,7 @@ pipeline {
         //       stage("OS Setup") {
         //         agent  {
         //           node {
-        //             label "linux && java11"
+        //             label "osing-bahari"
         //           }
         //         }
         //         steps {
@@ -130,7 +130,7 @@ pipeline {
         stage("Parameter") {
           agent {
             node {
-              label "debian && java17"
+              label "osing-bahari"
             }
           }
             
@@ -149,7 +149,7 @@ pipeline {
             }
             agent {
                 node {
-                    label "debian && java17"
+                    label "osing-bahari"
                 }
             }
             
@@ -169,7 +169,7 @@ pipeline {
         stage('Build') {
             agent {
                 node {
-                    label "ubuntu && java17"
+                    label "osing-bahari"
                 }
             }
             
@@ -190,7 +190,7 @@ pipeline {
         stage('Test') {
             agent {
                 node {
-                    label "ubuntu && java17"
+                    label "osing-bahari"
                 }
             }
             
@@ -222,7 +222,7 @@ pipeline {
             
             agent {
                 node {
-                    label "debian && java17"
+                    label "osing-bahari"
                 }
             }
             
@@ -242,7 +242,7 @@ pipeline {
           }
           agent {
             node {
-              label "debian && java17"
+              label "osing-bahari"
             }
           }
           steps {
