@@ -3,7 +3,7 @@ pipeline {
     // agent any
     // agent {
     //     node {
-    //         label "ubuntu && java17"
+    //         label "osing-bahari"
     //     }
     // }
 
@@ -39,7 +39,7 @@ pipeline {
         // stage("Preparation") {
         //     agent {
         //         node {
-        //           label "debian && java17"
+        //           label "osing-bahari"
         //         }
         //     }
 
@@ -66,7 +66,7 @@ pipeline {
         //         stage("Prepare Java") {
                     // agent {
                     //     node {
-                    //       label "debian && java17"
+                    //       label "osing-bahari"
                     //     }
                     // }
         //             steps {
@@ -77,7 +77,7 @@ pipeline {
         //         stage("Prepare Maven") {
                     // agent {
                     //     node {
-                    //       label "debian && java17"
+                    //       label "osing-bahari"
                     //     }
                     // }
         //             steps {
