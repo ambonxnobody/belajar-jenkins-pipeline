@@ -15,11 +15,11 @@ pipeline {
         WEB = "https://ambonxnobody.vercel.app/"
     }
 
-    //  triggers {
+     triggers {
     //    cron("*/5 * * * *")
-    //    pollSCM("*/5 * * * *")
+       pollSCM("*/5 * * * *")
     //    upstream(upstreamProject: 'job1,job2', threshold: hudson.model.Result.SUCCESS)
-    //  }
+     }
 
     parameters {
         string(name: "NAME", defaultValue: "Guest", description: "What is your name?")
